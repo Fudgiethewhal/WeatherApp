@@ -21,14 +21,9 @@ class Program
         var temp = weather.RootElement.GetProperty("main").GetProperty("temp").GetDouble();
         var description = weather.RootElement.GetProperty("weather")[0].GetProperty("description").GetString();
 
-        Console.WriteLine($"\n🌤️  Grants Pass, OR Weather"); 
+        Console.WriteLine($"Grants Pass, OR Weather"); 
         Console.WriteLine($"Temperature: {temp}°F");
         Console.WriteLine($"Condition: {description}");
-      
-        string art = description.Contains("cloud") ? "☁️"
-                    : description.Contains("rain") ? "🌧️"
-                    : "☀️";
-        Console.WriteLine($"\n{art}  {description.ToUpper()} {art}");
 
         if (temp < 50)
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -37,7 +32,7 @@ class Program
         else if (temp > 80)
             Console.ForegroundColor = ConsoleColor.Red;
 
-        Console.WriteLine($"🌡️ It's currently {temp}°F in Grants Pass.");
+        Console.WriteLine($"It's currently {temp}°F in Grants Pass.");
         Console.ResetColor();
 
     }
